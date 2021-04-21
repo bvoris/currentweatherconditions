@@ -8,7 +8,7 @@ $uri = "https://weather.com/weather/today/l/$zipcode"
 $data = Invoke-WebRequest $uri
 $data = Invoke-WebRequest $uri
 $TodaysWeather = $data.ParsedHtml.body.getElementsByTagName('div') | 
-    Where {$_.getAttributeNode('class').Value -eq 'CurrentConditions--CurrentConditions--2_Nmm'} | Select @{Name="Current Weather Conditions"; Expression={$_.textContent}}
+    Where {$_.getAttributeNode('class').Value -eq 'CurrentConditions--CurrentConditions--2_Nmm'} | Select -expandProperty outerText
 
 
 $Currentforcast = $data.ParsedHtml.body.getElementsByTagName('div') | 
