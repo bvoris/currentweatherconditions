@@ -12,7 +12,8 @@ Created By: Brad Voris<BR />
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/bvoris/currentweatherconditions">
 <BR /><BR />
 Example of CurrentWeatherConditions:<BR />
-<IMG SRC="https://github.com/bvoris/currentweatherconditions/blob/main/weatherss.PNG" ALIGN=LEFT><BR />
+<IMG SRC="https://github.com/bvoris/currentweatherconditions/blob/main/weatherss.PNG" ALIGN=LEFT>
+<BR /><BR />
 
 ## Connect with me at
 
