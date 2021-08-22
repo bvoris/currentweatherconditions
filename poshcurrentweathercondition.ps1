@@ -1,3 +1,4 @@
+
 # Current Weather Conditions
 # Created by Brad Voris
 # Change the Zip code to your location to display the current weather conditions from Weather.com
@@ -8,11 +9,11 @@ $uri = "https://weather.com/weather/today/l/$zipcode"
 $data = Invoke-WebRequest $uri
 $data = Invoke-WebRequest $uri
 $TodaysWeather = $data.ParsedHtml.body.getElementsByTagName('div') | 
-    Where {$_.getAttributeNode('class').Value -eq 'CurrentConditions--CurrentConditions--2_Nmm'} | Select -expandProperty outerText
+    Where {$_.getAttributeNode('data-testid').Value -eq 'CurrentConditionsContainer'} | Select -expandProperty outerText
 
 
 $Currentforcast = $data.ParsedHtml.body.getElementsByTagName('div') | 
-    Where {$_.getAttributeNode('class').Value -eq 'TodayWeatherCard--TableWrapper--13jpa'} | select -expandProperty outerText
+    Where {$_.getAttributeNode('id').Value -in 'todayDetails'} | select -expandProperty outerText
 
 $TodaysWeather
 $Currentforcast
